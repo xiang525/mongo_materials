@@ -1,0 +1,183 @@
+transfer files to amazon EC2:
+scp -i usf.pem crawler1.py ec2-user@54.186.53.23:/home/ec2-user/
+scp -i usf.pem usf.pem ec2-user@54.186.53.23:/etc/ssl/
+scp -i usf.pem run.sh ec2-user@54.186.53.23:/home/ec2-user/
+
+scp -i usf.pem usf.pem ec2-user@54.186.53.23:/home/ec2-user/
+
+http://jonathanhui.com/install-mongodb-amazon-linux
+
+
+connect to the amazon:
+ssh -i usf.pem ec2-user@54.186.53.23   
+ssh -i usf.pem ec2-user@54.191.241.157
+
+
+scp -i usf.pem tt.py ec2-user@54.191.241.157:/home/ec2-user/
+
+
+
+
+ssh -i usf.pem ec2-user@54.213.179.44
+
+Mongodb on amazon EC2:
+http://www.mongodb.com/partners/amazon
+http://docs.mongodb.org/ecosystem/platforms/amazon-ec2/
+
+how to install mongodb on amazon EC2
+http://jonathanhui.com/install-mongodb-amazon-linux
+
+
+
+crawler1:
+ssh -i usf.pem ec2-user@54.213.195.1
+
+
+crawler2:  54.213.192.103
+ssh -i usf.pem ec2-user@54.213.192.103
+scp -i usf.pem gameme_crawler.py ec2-user@54.213.192.103:/home/ec2-user/
+
+Mongo_Server:
+ssh -i usf.pem ec2-user@54.68.195.171   21,22   ok
+
+crawler1: ssh -i usf.pem ec2-user@54.213.245.112   1,2,3   yes  ok
+crawler2: ssh -i usf.pem ec2-user@54.213.238.187   19     yes   ok
+crawler3: ssh -i usf.pem ec2-user@54.213.245.141     20   yes    ok
+crawler4: ssh -i usf.pem ec2-user@54.213.225.168    4    yes    ok
+crawler5: ssh -i usf.pem ec2-user@52.10.112.199     5     yes    ok   run
+crawler6: ssh -i usf.pem ec2-user@54.213.245.181    6    yes    ok
+crawler7: ssh -i usf.pem ec2-user@54.213.245.196    7   yes    ok
+crawler8: ssh -i usf.pem ec2-user@54.213.245.86     8    yes    ok
+crawler9: ssh -i usf.pem ec2-user@54.213.245.73     9   yes    ok
+crawler10: ssh -i usf.pem ec2-user@54.213.205.182   10    yes    ok
+crawler11: ssh -i usf.pem ec2-user@54.213.248.117    11   yes    ok
+crawler12: ssh -i usf.pem ec2-user@54.201.6.173      12    yes    ok
+crawler13:  ssh -i usf.pem ec2-user@54.201.6.173    13    yes    ok
+crawler14: ssh -i usf.pem ec2-user@54.213.245.67      14    yes    ok
+crawler15: ssh -i usf.pem ec2-user@54.213.245.204      15   yes   ok
+crawler16: ssh -i usf.pem ec2-user@54.213.235.13       16   yes    ok   *****
+crawler17: ssh -i usf.pem ec2-user@54.213.234.29        17   yes     ok  fix
+crawler18: ssh -i usf.pem ec2-user@54.200.191.227       18  yes    ok   fix
+
+scp -i usf.pem crawler1.py ec2-user@54.213.245.112:/home/ec2-user/
+scp -i usf.pem crawler19.py ec2-user@54.213.238.187:/home/ec2-user/
+scp -i usf.pem crawler20.py ec2-user@54.213.245.141:/home/ec2-user/
+scp -i usf.pem crawler4.py ec2-user@54.213.225.168:/home/ec2-user/
+scp -i usf.pem crawler5.py ec2-user@52.10.112.199:/home/ec2-user/
+scp -i usf.pem crawler6.py ec2-user@54.213.245.181:/home/ec2-user/
+scp -i usf.pem crawler7.py ec2-user@54.213.245.196:/home/ec2-user/
+scp -i usf.pem crawler8.py ec2-user@54.213.245.86:/home/ec2-user/
+scp -i usf.pem crawler9.py ec2-user@54.213.245.73:/home/ec2-user/
+scp -i usf.pem crawler10.py ec2-user@54.213.205.182:/home/ec2-user/
+scp -i usf.pem crawler11.py ec2-user@54.213.248.117:/home/ec2-user/
+scp -i usf.pem crawler12.py ec2-user@54.201.6.173:/home/ec2-user/
+scp -i usf.pem crawler13.py ec2-user@54.213.245.203:/home/ec2-user/
+scp -i usf.pem crawler14.py ec2-user@54.213.245.67:/home/ec2-user/
+scp -i usf.pem crawler15.py ec2-user@54.213.245.204:/home/ec2-user/
+scp -i usf.pem crawler16.py ec2-user@54.213.235.13:/home/ec2-user/   ****
+scp -i usf.pem crawler17.py ec2-user@54.213.234.29:/home/ec2-user/
+scp -i usf.pem crawler18.py ec2-user@54.200.191.227:/home/ec2-user/
+scp -i usf.pem crawler21.py ec2-user@54.68.195.171:/home/ec2-user/
+scp -i usf.pem crawler22.py ec2-user@54.68.195.171:/home/ec2-user/
+
+
+
+
+
+sudo env ARCHFLAGS='-arch i386 -arch x86_64' python -m easy_install pymongo
+
+scp -i usf.pem common_functions.py hazard_analsis.py ec2-user@54.213.235.13:/home/ec2-user/ 
+scp -i usf.pem -r  networkx-1.9.1 ec2-user@54.213.235.13:/home/ec2-user/ 
+scp -i usf.pem cheaters friendship_edges_15_days ec2-user@54.213.235.13:/home/ec2-user/ 
+
+
+
+
+
+
+mongod --sslMode requireSSL --sslPEMKeyFile /etc/ssl/usf.pem
+
+'mongodb://54.213.192.103:27017'
+
+mongodb://54.191.84.58 :27017
+
+Server:
+ssh -i usf.pem ec2-user@54.191.84.58   
+
+
+Client:
+ssh -i usf.pem ec2-user@54.200.3.74
+scp -i usf.pem crawler2.py ec2-user@54.200.3.74:/home/ec2-user/
+mongo 54.191.84.58:27017
+
+
+
+
+http://www.gameme.com/gameservers?masterlist_show_page=1&masterlist_order=act_players&masterlist_order_type=desc&game=bfiii&country=#masterlist
+http://www.gameme.com/gameservers?masterlist_show_page=1&masterlist_order=act_players&masterlist_order_type=desc&amp;game=bfiii&amp;country=#masterlist
+
+
+cralwer7
+crawler11
+crawler14
+crawler15
+crawler18
+crawler19
+crawler4
+crawler5
+crawler6
+crawler8
+crawler9
+
+
+mongoexport --host localhost --db new_coplay --collection crawler9 --csv --out 9.csv --fields steamid,connection_time,ip,gamename,flag,crawling_time,game_name_in_url,map_name,crawler,unid
+
+
+scp -i usf.pem -r ec2-user@54.68.195.171:/home/ec2-user/a_week ./
+
+scp -i usf.pem -r ec2-user@54.68.195.171:/home/ec2-user/two_weeks ./
+
+scp -i usf.pem -r ec2-user@54.68.195.171:/home/ec2-user/april_9 ./
+
+
+## How to install pynev under my own account on linux
+1. git clone git://github.com/yyuu/pyenv.git ~/.pyenv
+2. echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+   echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+   echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+3. .pyenv/plugins/python-build   --- line 1670 change https->http
+4. restart the terminal
+5. pyenv install 2.7.8
+6. pyenv global 2.7.8
+   pyenv rehash
+7. python --version
+
+
+
+install under my account
+mongod --dbpath /home/xiangzuo/data/db/ --port 27018
+http://docs.mongodb.org/manual/tutorial/manage-mongodb-processes/
+
+/home/xiangzuo/mongodb/mongodb-linux-x86_64-3.0.1
+
+export PATH=/home/xiangzuo/mongodb/mongodb-linux-x86_64-3.0.1/bin:$PATH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

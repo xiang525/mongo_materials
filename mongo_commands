@@ -1,0 +1,86 @@
+1. show dbs
+display database on the current server
+
+2. use db-name
+switch to the targeted database
+
+3. show collections
+display all the collections in the db
+
+4. mongoexport -d sh -c edge_events -f u,v,relationship --csv -o ./friend.csv
+
+mongoexport --host localhost --db dbname --collection name --csv --out text.csv --fields firstName,middleName,lastName
+
+mongoexport --host localhost --db new_coplay --collection players3 --csv --out out_players3.csv --fields steamid,connection_time,ip,gamename,flag,crawling_time,game_name_in_url,map_name,crawler,unid
+
+mongoexport --host localhost --db new_coplay --collection crawler19 --csv --out 19.csv --fields steamid,connection_time,ip,gamename,flag,crawling_time,game_name_in_url,map_name,crawler,unid
+
+scp -i usf.pem  -r ec2-user@54.68.195.171:/home/ec2-user/essa ./
+
+5. db.events.find()
+display a table content
+
+6. extract certain items with a condition
+
+mongoexport --host localhost --db new_coplay --collection players3 --csv --out out_players3.csv --fields steamid,connection_time,ip,gamename,flag,crawling_time,game_name_in_url,map_name,crawler,unid
+
+
+
+
+
+
+ mongoexport -d sh -c events -f type,timestamp, participants{steamid},  --csv -o ./test.csv
+ 
+ mongoexport -d sh -c events -f type,timestamp, participants{steamid},  --csv -o ./test.csv
+ 
+ mongoexport -d sh -c events -o events.dat
+ 
+ mongoexport -d sh -c events  -o ./test.dat -q '{type:"player-entered-game"}' 
+ 
+ mongoexport -d sh -c events  -o ./log.dat -q '{type:"log-file-end"}' 
+ 
+ mongoexport -d sh -c game_presence -f games_present_sparse, steamid -o ./presence.dat 
+ 
+  mongoexport -d sh -c events  -o ./test.dat -q '{type:"player-joined-team"}' 
+  
+  mongoexport -d sh -c events  -o ./disconnected.dat -q '{type:"player-disconnected"}' 
+
+
+install pymongo:
+git clone git://github.com/mongodb/mongo-python-driver.git pymongo
+
+
+ps aux | grep mongo
+kill -9 pid
+
+mongod -f /home/xiangzuo/mongodb/mongodb-linux-x86_64-3.0.1/config/mongod.conf
+
+mongod --config /home/xiangzuo/mongodb/mongodb-linux-x86_64-3.0.1/config/mongod.conf 
+
+
+start mongodb on slavenode11:
+mongod --dbpath /home/xiangzuo/data/db/ --port 27018
+
+get slavenode ipaddress:
+hostname -i
+
+
+
+76561198150550738,1426709350,46.20.3.54:27015,Battlefield3,1,1426710215.748129,csgo,de_inferno,crawler2
+76561198150550738,1426709350,46.20.3.54:27015,Battlefield_Bad_Company_2,1,1426710200.078836,csgo,de_inferno,crawler1
+
+76561197964389637,1426706380,5.9.158.136:27315,Battlefield_Bad_Company_2,1,1426710200.078836,css,gg_simpsons_train,crawler1
+76561197964389637,1426706380,5.9.158.136:27315,Battlefield_Bad_Company_2,1,1426710649.373493,css,gg_simpsons_buzzkill,crawler1
+76561197964389637,1426706380,5.9.158.136:27315,Battlefield_Bad_Company_2,1,1426710649.373493,css,gg_simpsons_buzzkill,crawler1
+
+
+iptables -A INPUT -p tcp -d 0/0 -s 0/0 --dport 27018 -j ACCEPT
+
+
+
+
+
+
+
+
+ 
