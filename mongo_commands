@@ -6,6 +6,8 @@ switch to the targeted database
 
 3. show collections
 display all the collections in the db
+db.crawler1.find().limit(2)    db.crawler1.findOne()    db.crawler1.find()
+db.crawler1.drop() # drop a collection
 
 4. mongoexport -d sh -c edge_events -f u,v,relationship --csv -o ./friend.csv
 
@@ -15,6 +17,11 @@ mongoexport --host localhost --db new_coplay --collection players3 --csv --out o
 
 mongoexport --host localhost --db new_coplay --collection crawler19 --csv --out 19.csv --fields steamid,connection_time,ip,gamename,flag,crawling_time,game_name_in_url,map_name,crawler,unid
 
+mongoexport --host localhost --port 27018  --db profile --collection crawler11 --type=csv --out 11.csv --fields steamid,level,percent,total_game_achieve,achievement
+(if the port number is not the default one, we need to add a port number)
+
+
+
 scp -i usf.pem  -r ec2-user@54.68.195.171:/home/ec2-user/essa ./
 
 5. db.events.find()
@@ -23,6 +30,13 @@ display a table content
 6. extract certain items with a condition
 
 mongoexport --host localhost --db new_coplay --collection players3 --csv --out out_players3.csv --fields steamid,connection_time,ip,gamename,flag,crawling_time,game_name_in_url,map_name,crawler,unid
+
+
+7. create a db in mongodb
+switched to db profile; db.users.save({username:"profile"})
+db.collection.drop()
+
+mongo --port 27018
 
 
 
@@ -75,6 +89,45 @@ hostname -i
 
 
 iptables -A INPUT -p tcp -d 0/0 -s 0/0 --dport 27018 -j ACCEPT
+
+
+db.bans.ensureIndex({steamid:1},{unique:true})
+db.dropDatabase()
+
+4. How to slove duplicate key problems.
+http://stackoverflow.com/questions/21119928/getting-err-e11000-duplicate-key-error-when-inserting-into-mongo-using-the
+The problem is that PyMongo injects an _id field into the document, if the _id field does not exist, before inserting it (_id is always generated client side with 10gen drivers). That means that the first time through the loop _id is added by the insert method. Since doc is defined outside the loop, each subsequent pass through the loop uses the same value for _id.
+
+Solution:
+
+The original problem:
+doc = {} 
+for i in xrange(2): 
+    doc['i'] = i 
+    collection.insert(doc) 
+    
+
+1. Delete the key _id
+for i in xrange(2): 
+    doc['i'] = i 
+    if '_id' in doc: 
+        del doc['_id'] 
+    c.shard_db.trackvars.insert(doc)
+
+2. Or create manually a new one:
+from bson.objectid import ObjectId 
+for i in xrange(2): 
+    doc['i'] = i 
+    doc['_id'] = ObjectId() 
+    c.shard_db.trackvars.insert(doc)
+
+
+
+
+
+
+
+
 
 
 
