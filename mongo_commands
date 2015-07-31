@@ -105,7 +105,7 @@ doc = {}
 for i in xrange(2): 
     doc['i'] = i 
     collection.insert(doc) 
-    
+
 
 1. Delete the key _id
 for i in xrange(2): 
@@ -120,6 +120,11 @@ for i in xrange(2):
     doc['i'] = i 
     doc['_id'] = ObjectId() 
     c.shard_db.trackvars.insert(doc)
+
+
+
+
+
 
 
 
